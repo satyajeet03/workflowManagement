@@ -627,13 +627,30 @@ const WorkflowEditor = () => {
         });
       } else {
         // Existing workflow logic
-        // ...
+        if (workflow) {
+          const updatedWorkflow = {
+            ...workflow,
+            name: name,
+            description: description,
+            nodes: nodes as WorkflowStep[],
+            edges: edges as WorkflowConnection[],
+            updatedAt: Date.now()
+          };
+          await updateWorkflow(updatedWorkflow);
+          setSnackbar({
+            open: true,
+            message: 'Workflow updated successfully',
+            severity: 'success',
+          });
+        } else {
+          throw new Error('Workflow data is not available for update');
+        }
       }
     } catch (error) {
       console.error('Error saving workflow:', error);
       setSnackbar({
         open: true,
-        message: `Error saving workflow: ${error instanceof Error ? error.message : 'Unknown error'}`,
+        message: `Failed to save workflow: ${error instanceof Error ? error.message : 'Unknown error'}`,
         severity: 'error',
       });
     } finally {
