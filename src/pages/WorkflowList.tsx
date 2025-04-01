@@ -11,8 +11,7 @@ import {
   TableContainer,
   TableHead,
   TableRow,
-  Paper,
-  Chip,
+  Paper, 
   IconButton,
   Dialog,
   DialogActions,
@@ -162,6 +161,7 @@ const WorkflowList = () => {
   };
 
   const handleChangePage = (event: any, value: number) => {
+    console.log(event)
     setPage(value);
   };
 

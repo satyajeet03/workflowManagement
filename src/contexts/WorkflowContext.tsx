@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import  { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { collection, getDocs, doc, setDoc, getDoc, query, where, deleteDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { useAuth } from './AuthContext';
@@ -199,7 +199,7 @@ export function WorkflowProvider({ children }: WorkflowProviderProps) {
     }
   };
 
-  const executeWorkflow = async (id: string): Promise<boolean> => {
+  const executeWorkflow = async (): Promise<boolean> => {
     // Implementation of executeWorkflow if needed
     return true;
   };

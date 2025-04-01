@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
 import { AuthProvider } from './contexts/AuthContext';
@@ -6,8 +6,7 @@ import { WorkflowProvider } from './contexts/WorkflowContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import WorkflowList from './pages/WorkflowList';
-import WorkflowEditor from './pages/WorkflowEditor'; 
-import BasicWorkflowEditor from './BasicWorkflowEditor';
+import WorkflowEditor from './pages/WorkflowEditor';  
 import PrivateRoute from './components/PrivateRoute';
 
 const theme = createTheme({
@@ -82,8 +81,7 @@ function App() {
                 } 
               />
           
-              
-              <Route path="/basic" element={<BasicWorkflowEditor />} />
+               
               
               <Route path="/" element={<Navigate to="/login" replace />} />
             </Routes>

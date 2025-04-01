@@ -499,6 +499,7 @@ const WorkflowEditor = () => {
     message: '',
     severity: 'success',
   });
+  console.log(saving)
   const reactFlowWrapper = useRef<HTMLDivElement>(null);
   const [reactFlowInstance, setReactFlowInstance] = useState<any>(null);
   const [zoom, setZoom] = useState(1);
@@ -508,6 +509,7 @@ const WorkflowEditor = () => {
 
   // Node click handler
   const onNodeClick = useCallback((event: React.MouseEvent, node: Node) => {
+    console.log(event)
     setSelectedNode(node);
     setDrawerOpen(true);
   }, []);
