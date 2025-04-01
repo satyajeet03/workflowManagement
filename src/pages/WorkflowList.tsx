@@ -25,15 +25,12 @@ import {
   Snackbar,
   Alert,
   Menu,
-  MenuItem,
-  Pagination,
+  MenuItem, 
   Stack,
 } from '@mui/material';
 import {
   Search as SearchIcon,
-  Add as AddIcon,
-  Edit as EditIcon,
-  PlayArrow as PlayArrowIcon,
+  Add as AddIcon, 
   Star as StarIcon,
   StarBorder as StarBorderIcon,
   MoreVert as MoreVertIcon,
@@ -150,22 +147,7 @@ const WorkflowList = () => {
       setFavorites([...favorites, workflowId]);
     }
   };
-
-  const getStatusChip = (status: string) => {
-    switch (status) {
-      case 'passed':
-        return <Chip label="Passed" color="success" size="small" />;
-      case 'failed':
-        return <Chip label="Failed" color="error" size="small" />;
-      case 'draft':
-        return <Chip label="Draft" color="default" size="small" />;
-      case 'active':
-        return <Chip label="Active" color="primary" size="small" />;
-      default:
-        return <Chip label={status} size="small" />;
-    }
-  };
-
+ 
   const formatDate = (timestamp: number) => {
     if (!timestamp) return 'N/A';
     
@@ -179,7 +161,7 @@ const WorkflowList = () => {
     return `${hours}:${minutes} IST - ${day}/${month}`;
   };
 
-  const handleChangePage = (event: React.ChangeEvent<unknown>, value: number) => {
+  const handleChangePage = (event: any, value: number) => {
     setPage(value);
   };
 

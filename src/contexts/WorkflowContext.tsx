@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, ReactNode } from
 import { collection, getDocs, doc, setDoc, getDoc, query, where, deleteDoc } from 'firebase/firestore';
 import { db } from '../services/firebase';
 import { useAuth } from './AuthContext';
-import { Workflow, WorkflowStep, WorkflowConnection } from '../types/workflow';
+import { Workflow } from '../types/workflow';
 import { v4 as uuidv4 } from 'uuid';
 
 interface WorkflowContextProps {

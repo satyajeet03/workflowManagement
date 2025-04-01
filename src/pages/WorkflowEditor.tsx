@@ -10,8 +10,7 @@ import {
   useEdgesState,
   ReactFlowProvider,
   Panel,
-  Background,
-  Controls,
+  Background, 
   NodeTypes,
   EdgeTypes,
   Handle,
@@ -23,8 +22,7 @@ import {
 import 'reactflow/dist/style.css';
 import {
   Box,
-  Button,
-  Container,
+  Button, 
   TextField,
   Typography,
   Stack,
@@ -40,12 +38,7 @@ import {
   Select,
   FormControl,
   InputLabel,
-  FormHelperText,
-  Popover,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
+  FormHelperText, 
   Menu,
   Tooltip,
   Dialog,
@@ -61,14 +54,12 @@ import {
   Api as ApiIcon,
   Email as EmailIcon,
   Code as CodeIcon,
-  TextFields as TextFieldsIcon,
-  MoreHoriz as MoreHorizIcon,
+  TextFields as TextFieldsIcon, 
   ZoomIn as ZoomInIcon,
   ZoomOut as ZoomOutIcon,
 } from '@mui/icons-material';
 import { useWorkflow } from '../contexts/WorkflowContext';
-import { Workflow, WorkflowStep, WorkflowConnection } from '../types/workflow';
-import { v4 as uuidv4 } from 'uuid';
+import { Workflow, WorkflowStep, WorkflowConnection } from '../types/workflow'; 
 
 // Define custom node components directly here instead of importing
 const StartNode = ({ data }: { data: { label: string } }) => {
@@ -455,15 +446,7 @@ declare global {
     addNodeOnEdge?: (edgeId: string, nodeType: string) => void;
   }
 }
-
-interface WorkflowData {
-  name: string;
-  description: string;
-  nodes: Node[];
-  edges: Edge[];
-  createdAt: string;
-  updatedAt: string;
-}
+ 
 
 const WorkflowEditor = () => {
   const { id } = useParams<{ id: string }>();
@@ -659,23 +642,7 @@ const WorkflowEditor = () => {
     setDrawerOpen(false);
   };
 
-  const onAddNode = (type: 'api' | 'email' | 'condition') => {
-    const position = reactFlowInstance?.project({
-      x: window.innerWidth / 2 - 100,
-      y: window.innerHeight / 2 - 100,
-    }) || { x: 100, y: 100 };
-
-    const newNode = {
-      id: uuidv4(),
-      type,
-      position,
-      data: {
-        label: type === 'api' ? 'API Call' : type === 'email' ? 'Send Email' : 'Condition',
-      },
-    };
-
-    setNodes((nds) => [...nds, newNode]);
-  };
+   
 
   const onDeleteNode = useCallback(() => {
     if (!selectedNode) return;
@@ -744,19 +711,7 @@ const WorkflowEditor = () => {
     });
   }, [edges, setEdges]);
 
-  // Add save button to the panel
-  const renderSaveButton = () => (
-    <Panel position="top-right">
-      <Button
-        variant="contained"
-        color="primary"
-        startIcon={<SaveIcon />}
-        onClick={() => setSaveModalOpen(true)}
-      >
-        Save Workflow
-      </Button>
-    </Panel>
-  );
+  
 
   // Save modal component
   const renderSaveModal = () => (

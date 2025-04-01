@@ -16,7 +16,7 @@ import {
   Divider,
 } from '@mui/material';
 import { useAuth } from '../contexts/AuthContext';
-import { Google as GoogleIcon, Facebook as FacebookIcon, Apple as AppleIcon } from '@mui/icons-material';
+import { Google as GoogleIcon,  } from '@mui/icons-material';
 
 const Login = () => {
   const [email, setEmail] = useState('');

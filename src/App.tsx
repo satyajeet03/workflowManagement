@@ -6,8 +6,7 @@ import { WorkflowProvider } from './contexts/WorkflowContext';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import WorkflowList from './pages/WorkflowList';
-import WorkflowEditor from './pages/WorkflowEditor';
-import SimpleWorkflowEditor from './pages/SimpleWorkflowEditor';
+import WorkflowEditor from './pages/WorkflowEditor'; 
 import BasicWorkflowEditor from './BasicWorkflowEditor';
 import PrivateRoute from './components/PrivateRoute';
 
@@ -82,15 +81,7 @@ function App() {
                   </PrivateRoute>
                 } 
               />
-              
-              <Route 
-                path="/simple-workflow" 
-                element={
-                  <PrivateRoute>
-                    <SimpleWorkflowEditor />
-                  </PrivateRoute>
-                } 
-              />
+          
               
               <Route path="/basic" element={<BasicWorkflowEditor />} />
               

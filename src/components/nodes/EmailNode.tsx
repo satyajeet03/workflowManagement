@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Handle, Position } from 'reactflow';
 import { Paper, Typography, Box } from '@mui/material';
 import EmailIcon from '@mui/icons-material/Email';
